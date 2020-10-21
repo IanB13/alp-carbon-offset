@@ -15,11 +15,15 @@ const Brics = ({setPage, setData, data}) =>{
     }
     return(
         <>
-            <div>
+            <h1>
+                Number of Bric Units
+            </h1>
+            <p>
                 Select Number of units
-            </div>
+            </p>
+            <div>
             <Input type='number' onChange = {setBric} value = {data.bric} />
-            this is where the number of bricks will be selected
+            </div>
             <div>
                 <Button onClick={previous}>previous </Button>
                 <Button onClick={next}> next </Button>

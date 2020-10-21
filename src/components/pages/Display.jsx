@@ -12,13 +12,13 @@ const Display = ({data}) =>{
     return(
         <>
         <h1>
-            Total Carbon offset: {data.bric*data.CO2*lifetime/1000}kg of CO2
+            Total Carbon offset: { Math.round(data.bric*data.CO2*lifetime/1000)}kg of CO2
         </h1>
         This is equivalent to 
         <ul>
-            <li>Driving {data.bric*data.CO2*lifetime/co2.driving} km</li>
-            <li>Flying {data.bric*data.CO2*lifetime/co2.flying} km </li>
-            <li>{data.bric*data.CO2*lifetime/co2.tree} Trees</li>
+            <li>Driving {Math.round(data.bric*data.CO2*lifetime/co2.driving)} km</li>
+            <li>Flying {Math.round(data.bric*data.CO2*lifetime/co2.flying)} km </li>
+            <li>{Math.round(data.bric*data.CO2*lifetime/co2.tree)} Trees</li>
         </ul>
         </>
     )
