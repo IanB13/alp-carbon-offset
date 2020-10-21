@@ -8,6 +8,8 @@ import Steps from './Steps'
 
 const Container = () =>{
     const [page, setPage] = useState(0)
+    const [data, setData] = useState({CO2:0, bric: 0})
+
     const next = () =>{
         setPage(page+1)
     }
@@ -27,11 +29,11 @@ const Container = () =>{
           case 0:
             return <Start />;
           case 1:
-            return <CarbonPerKwh />;
+            return <CarbonPerKwh setPage ={setPage} data = {data} setData = {setData}/>;
           case 2:
-            return <Brics />;
+            return <Brics setPage ={setPage} data = {data} setData = {setData}/>;
         case 3:
-            return <Display />;
+            return <Display setPage ={setPage} data = {data} setData = {setData}/>;
           default:
             return null;
         }
@@ -40,11 +42,7 @@ const Container = () =>{
         {(() => {
         switch (page) {
           case 0:
-            return  <Button onClick = {next}> start </Button>;
-          case 1:
-            return <Button onClick = {next}> next </Button>
-          case 2:
-            return <> <Button onClick = {previous}>previous </Button> <Button onClick = {next}> next </Button> </>;
+            return  <Button onClick = {next}> start </Button>
           case 3:
             return  <Button onClick = {previous}>previous </Button>;
           default:
