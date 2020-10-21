@@ -1,9 +1,10 @@
 import React,{useState} from 'react';
 import {Button} from 'semantic-ui-react'
-import Start from './Start'
-import CarbonPerKwh from './CarbonPerKwh'
-import Brics from './Brics'
-import Display from './Display'
+import Start from './pages/Start'
+import CarbonPerKwh from './pages/CarbonPerKwh'
+import Brics from './pages/Brics'
+import Display from './pages/Display'
+import Steps from './Steps'
 
 const Container = () =>{
     const [page, setPage] = useState(0)
@@ -16,9 +17,10 @@ const Container = () =>{
     
     return(
         <>
-        <header>
-        </header>
-        <div>Header</div>
+        <div id ={"widboi"}>
+          <Steps page = {page}/>
+        </div>
+        
         <div>
         {(() => {
         switch (page) {
@@ -38,8 +40,9 @@ const Container = () =>{
         {(() => {
         switch (page) {
           case 0:
-            return  <Button onClick = {next}> next </Button>;
+            return  <Button onClick = {next}> start </Button>;
           case 1:
+            return <Button onClick = {next}> next </Button>
           case 2:
             return <> <Button onClick = {previous}>previous </Button> <Button onClick = {next}> next </Button> </>;
           case 3:
