@@ -1,7 +1,11 @@
 import React from "react"
-import { Header } from 'semantic-ui-react'
+import { Header, Button } from 'semantic-ui-react'
 
-const Start = () =>{
+const Start = ({setPage}) =>{
+    const next = () =>{
+            setPage("CarbonPerKwh")
+    }
+
     return(
         <div>
             <Header as='h1'>Bric Carbon Offset</Header>
@@ -17,6 +21,10 @@ const Start = () =>{
             This web app calculates the carbon offset that using a Power Bric system would have. 
 
         </p>
+        <div className = "centerButton">
+            <Button color = "blue" onClick = {next}> Start </Button>
+        </div>
+        
         </div>
         
     )

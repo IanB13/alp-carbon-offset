@@ -3,7 +3,7 @@ import { Button, Input } from 'semantic-ui-react'
 
 const CarbonPerKwh = ({ setPage, setData, data }) => {
     const next = () => {
-        setPage(2)
+        setPage("Brics")
     }
     const setCO2Peak = (e) =>{
         const CO2Peak = e.target.value
@@ -55,9 +55,9 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
             </p>
 
             <div>
-    <Input type='number' onChange={setCO2Trough} value={data.CO2Trough} />gCO2/kWh
+                <Input type='number' onChange={setCO2Trough} value={data.CO2Trough} />gCO2/kWh
             </div>
-            <div>
+            <div className = "rightButton">
                 <Button onClick={next}> next </Button>
             </div>
         </div>

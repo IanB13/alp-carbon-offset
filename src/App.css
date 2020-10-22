@@ -13,3 +13,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.centerButton{
+  text-align: center;
+  padding-top: 1em;
+}
+
+.rightButton{
+  text-align: right;
+  padding-top: 1em;
+}
+
+.spreadButtons{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}

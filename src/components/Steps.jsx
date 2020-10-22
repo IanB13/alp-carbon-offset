@@ -6,14 +6,14 @@ const Steps = ({page}) => {
     const bric = {}
     const results = {}
     switch (page){
-        case 1:
+        case "CarbonPerKwh":
             CO2.active = true
         break
-        case 2:
+        case "Brics":
             CO2.completed = true
             bric.active = true
         break
-        case 3:
+        case "Display":
             CO2.completed = true
             bric.completed = true
             results.active = true

@@ -1,6 +1,11 @@
 import React from "react"
+import {Button} from 'semantic-ui-react'
 
-const Display = ({data}) =>{
+const Display = ({setPage,data}) =>{
+    const previous = () =>{
+        setPage("Brics")
+    }
+
     const co2 ={ 
         driving: 109, //g/km
         flying: 113, //g /km
@@ -21,6 +26,7 @@ const Display = ({data}) =>{
             <li>Flying: {Math.round(data.bric*CO2*lifetime/co2.flying)} km </li>
             <li>{Math.round(data.bric*CO2*lifetime/co2.tree)} Trees</li>
         </ul>
+        <Button onClick = {previous}>previous </Button>
         </>
     )
 }

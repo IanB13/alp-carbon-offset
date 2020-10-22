@@ -3,10 +3,10 @@ import {Button,Input} from 'semantic-ui-react'
 
 const Brics = ({setPage, setData, data}) =>{
     const next = () =>{
-        setPage(3)
+        setPage("Display")
     }
     const previous = () =>{
-        setPage(1)
+        setPage("CarbonPerKwh")
     }
     const setBric = (e) =>{
         const bric = e.target.value
@@ -23,8 +23,9 @@ const Brics = ({setPage, setData, data}) =>{
             </p>
             <div>
             <Input type='number' onChange = {setBric} value = {data.bric} />
+            <br/>
             </div>
-            <div>
+            <div className = "spreadButtons">
                 <Button onClick={previous}>previous </Button>
                 <Button onClick={next}> next </Button>
             </div>
