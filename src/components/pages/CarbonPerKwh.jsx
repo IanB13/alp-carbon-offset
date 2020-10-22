@@ -5,9 +5,14 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
     const next = () => {
         setPage(2)
     }
-    const setCO2 = (e) =>{
-        const CO2 = e.target.value
-        const newData = {...data,CO2}
+    const setCO2Peak = (e) =>{
+        const CO2Peak = e.target.value
+        const newData = {...data,CO2Peak}
+        setData(newData)
+    }
+    const setCO2Trough = (e) =>{
+        const CO2Trough = e.target.value
+        const newData = {...data,CO2Trough}
         setData(newData)
     }
 
@@ -27,8 +32,30 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
                 If you are unsure of the carbon intensity in your area you can check this map.
                 <a href="https://www.electricitymap.org/map"> link </a>
             </p>
+            <h2>
+                Peak Carbon Intensity
+            </h2>
+            <p>
+                This is when energy produced by the grid has the most enviromental impact. At 
+                this time your battery would be supplying power to the grid. 
+
+                A typical value for Britan would be 280 gCO<sub>2</sub>/kWh
+            </p>
             <div>
-                <Input type='number' onChange={setCO2} value={data.CO2} />
+                <Input type='number' onChange={setCO2Peak} value={data.CO2Peak} /> gCO2/kWh
+            </div>
+            <h2>
+                Trough Carbon Intensity 
+            </h2>
+            <p>
+                This is when energy produced by the grid has the leat enviromental impact. At 
+                this time your battery would be charging. 
+
+                A typical value for Britan would be 120 gCO<sub>2</sub>/kWh
+            </p>
+
+            <div>
+    <Input type='number' onChange={setCO2Trough} value={data.CO2Trough} />gCO2/kWh
             </div>
             <div>
                 <Button onClick={next}> next </Button>

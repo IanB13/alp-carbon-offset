@@ -8,7 +8,7 @@ import Steps from './Steps'
 
 const Container = () =>{
     const [page, setPage] = useState(0)
-    const [data, setData] = useState({CO2:0, bric: 0})
+    const [data, setData] = useState({CO2Peak:0,CO2Trough:0, bric: 0})
 
     const next = () =>{
         setPage(page+1)

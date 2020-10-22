@@ -19,7 +19,7 @@ const Brics = ({setPage, setData, data}) =>{
                 Number of Bric Units
             </h1>
             <p>
-                Select Number of units
+                This is the number of Power Bric units you would utilize
             </p>
             <div>
             <Input type='number' onChange = {setBric} value = {data.bric} />
