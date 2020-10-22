@@ -1,32 +1,54 @@
 import React from "react"
-import {Button} from 'semantic-ui-react'
+import {Grid, Button} from 'semantic-ui-react'
+import ResultsView from './ResultsView'
 
 const Display = ({setPage,data}) =>{
     const previous = () =>{
         setPage("Brics")
     }
+  
+    const co2PerCycle = (data.CO2Peak - data.CO2Trough)*1.5
 
-    const co2 ={ 
-        driving: 109, //g/km
-        flying: 113, //g /km
-        tree: 22000 // per year
+    const co2Total ={
+        day: co2PerCycle * data.bric,
+        year: co2PerCycle * 365 * data.bric,
+        lifetime: co2PerCycle * 5000 * data.bric
     }
-    console.log(co2)
-    const CO2 = data.CO2Peak - data.CO2Trough
-    const lifetime = 7500 
+    // cycle = 1.5kwH
+    // cycles per year = 365
+    // cycles per lifetime = 5000
+
     console.log(data)
     return(
         <>
         <h1>
-            Total Carbon offset: { Math.round(data.bric*CO2*lifetime/1000)}kg of CO2
+            Total Carbon offset:
         </h1>
-        This is equivalent to 
-        <ul>
-            <li>Driving: {Math.round(data.bric*CO2*lifetime/co2.driving)} km</li>
-            <li>Flying: {Math.round(data.bric*CO2*lifetime/co2.flying)} km </li>
-            <li>{Math.round(data.bric*CO2*lifetime/co2.tree)} Trees</li>
-        </ul>
+        <h1 id = "carbonOffset">
+            { Math.round(co2Total.lifetime/1000)} kg of CO2
+        </h1>
+        This is equivalent to:
+        <br/>
+        <div>
+            <Grid columns={4} divided>
+                <Grid.Column>
+
+                    <Grid.Row>
+                        Driving:
+                    </Grid.Row>
+                    <Grid.Row>
+                        Flying:
+            </Grid.Row>
+                </Grid.Column>
+                <ResultsView duration ={"day"} co2 = {co2Total.day}/>
+                <ResultsView duration ={"year"} co2 = {co2Total.year}/>
+                <ResultsView duration ={"battery lifetime"} co2 = {co2Total.lifetime}/>
+            </Grid>
+        <br/>
+        </div>
+        <div>
         <Button onClick = {previous}>previous </Button>
+        </div>
         </>
     )
 }

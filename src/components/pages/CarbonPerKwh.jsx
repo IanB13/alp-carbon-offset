@@ -25,12 +25,12 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
             <p>
                 In order to find out how much carbon is offset we must
                 first determine the carbon intensity of the energy used at the location you are in.
-                Carbon intensity is a measurment of grams of carbon dixoide emited per Kilowatt 
+                Carbon intensity is a measurment of grams of carbon dixoide emited per kilowatt 
                 hour.
             </p>
             <p>
                 If you are unsure of the carbon intensity in your area you can check this map.
-                <a href="https://www.electricitymap.org/map"> link </a>
+                <a href="https://www.electricitymap.org/map"> link to map</a>
             </p>
             <h2>
                 Peak Carbon Intensity
@@ -38,11 +38,12 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
             <p>
                 This is when energy produced by the grid has the most enviromental impact. At 
                 this time your battery would be supplying power to the grid. 
-
+            </p>
+            <p>
                 A typical value for Britan would be 280 gCO<sub>2</sub>/kWh
             </p>
             <div>
-                <Input type='number' onChange={setCO2Peak} value={data.CO2Peak} /> gCO2/kWh
+                <Input type='number' onChange={setCO2Peak} value={data.CO2Peak} /> gCO<sub>2</sub>/kWh
             </div>
             <h2>
                 Trough Carbon Intensity 
@@ -50,12 +51,13 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
             <p>
                 This is when energy produced by the grid has the leat enviromental impact. At 
                 this time your battery would be charging. 
-
+            </p>
+            <p>
                 A typical value for Britan would be 120 gCO<sub>2</sub>/kWh
             </p>
 
             <div>
-                <Input type='number' onChange={setCO2Trough} value={data.CO2Trough} />gCO2/kWh
+                <Input type='number' onChange={setCO2Trough} value={data.CO2Trough} />gCO<sub>2</sub>/kWh
             </div>
             <div className = "rightButton">
             {(() => {

@@ -1,5 +1,5 @@
 import React from "react"
-import { Header, Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 const Start = ({setPage}) =>{
     const next = () =>{
@@ -8,7 +8,7 @@ const Start = ({setPage}) =>{
 
     return(
         <div>
-            <Header as='h1'>Bric Carbon Offset</Header>
+            <h1>Bric Carbon Offset</h1>
             <p>Are you concered about your carbon footprint and would like to offset the
             carbon footprint created by your energy use?
         </p>

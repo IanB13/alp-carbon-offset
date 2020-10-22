@@ -23,18 +23,18 @@ const Steps = ({page}) => {
 
     if(page) return (
 
-        <Step.Group ordered>
+        <Step.Group ordered id = "steps">
             <Step {...CO2} >
                 <Step.Content>
-                    <Step.Title>CO2 Emissions</Step.Title>
-                    <Step.Description>Enter your CO2 Emissions</Step.Description>
+                    <Step.Title>CO<sub>2</sub> Intensity</Step.Title>
+                    <Step.Description>CO<sub>2</sub> per kWh </Step.Description>
                 </Step.Content>
             </Step>
 
             <Step {...bric}>
                 <Step.Content>
-                    <Step.Title>Bric</Step.Title>
-                    <Step.Description>Enter Bric Info</Step.Description>
+                    <Step.Title>Power Bric</Step.Title>
+                    <Step.Description>Number of Units</Step.Description>
                 </Step.Content>
             </Step>
 
