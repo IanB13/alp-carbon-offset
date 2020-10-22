@@ -16,6 +16,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.5.7
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "jimbo-ilegal-deli" 
+          heroku_app_name: "alp-carbon-offset" 
           heroku_email: "ianapblair@gmail.com"
           usedocker: true
