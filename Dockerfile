@@ -8,8 +8,5 @@ RUN npm ci
 RUN npm install react-scripts@latest -g
 COPY . ./
 RUN npm run build
-
-# production environment
-FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm install -g serve
+CMD ["serve", "-s", "build"]
