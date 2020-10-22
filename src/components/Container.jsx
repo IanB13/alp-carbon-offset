@@ -5,9 +5,8 @@ import Brics from './pages/Brics'
 import Display from './pages/Display'
 import Steps from './Steps'
 
-const Container = () =>{
-    const [page, setPage] = useState("Start")
-    const [data, setData] = useState({CO2Peak:0,CO2Trough:0, bric: 0})
+const Container = ({page,setPage}) =>{
+  const [data, setData] = useState({CO2Peak:0,CO2Trough:0, bric: 0})  
   
     return(
         <>
