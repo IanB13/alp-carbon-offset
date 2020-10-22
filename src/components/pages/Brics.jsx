@@ -27,7 +27,12 @@ const Brics = ({setPage, setData, data}) =>{
             </div>
             <div className = "spreadButtons">
                 <Button onClick={previous}>previous </Button>
-                <Button onClick={next}> next </Button>
+                {(() => {
+                    if(data.bric > 0){
+                        return <Button color = "blue" onClick={next}>next </Button>
+                    }
+                        return <Button> next </Button>
+                })()}
             </div>
         </>
     )

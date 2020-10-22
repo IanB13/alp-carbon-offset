@@ -58,7 +58,12 @@ const CarbonPerKwh = ({ setPage, setData, data }) => {
                 <Input type='number' onChange={setCO2Trough} value={data.CO2Trough} />gCO2/kWh
             </div>
             <div className = "rightButton">
-                <Button onClick={next}> next </Button>
+            {(() => {
+                    if(data.CO2Peak > 0 && data.CO2Trough >0){
+                        return <Button color = "blue" onClick={next}>next </Button>
+                    }
+                        return <Button> next </Button>
+                })()}
             </div>
         </div>
 
